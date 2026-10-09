@@ -1,0 +1,68 @@
+/* =============================================================================
+   BÀI THỰC HÀNH: TẠO MENU DỌC (VERTICAL DROPDOWN MENU)
+   Tệp: styles.css
+   Quy chuẩn: CodeGym Frontend CSS Basic Practice
+   ============================================================================= */
+
+/* 1. Thiết lập font chữ chung và định dạng tiêu đề */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f6f8;
+}
+
+h3 {
+    margin-bottom: 12px;
+    color: #333333;
+}
+
+/* 2. Reset lề và đệm để tránh khác biệt giữa các trình duyệt */
+#menu,
+#menu ul,
+#menu li {
+    padding: 0;
+    margin: 0;
+}
+
+/* 3. Định kiểu các mục danh sách (li) cấp 1 */
+#menu li {
+    list-style: none;             /* Bỏ ký hiệu đầu dòng (bullet) */
+    position: relative;           /* Điểm neo tọa độ cho menu con tuyệt đối */
+    width: 100px;                 /* Chiều rộng cố định của phần tử */
+    height: 30px;                 /* Chiều cao cố định */
+    padding: 0 20px;              /* Lề trong trái/phải 20px => Tổng chiều rộng chiếm dụng là 140px */
+    background-color: black;      /* Màu nền đen */
+    line-height: 30px;            /* Căn giữa dòng văn bản theo chiều dọc */
+    cursor: pointer;              /* Đổi con trỏ chuột sang hình bàn tay */
+}
+
+/* 4. Định kiểu liên kết (a) bên trong các mục danh sách */
+#menu li a {
+    text-decoration: none;        /* Bỏ gạch chân liên kết */
+    color: white;                 /* Màu chữ trắng */
+    display: block;               /* Cho phép người dùng bấm vào toàn bộ vùng li */
+}
+
+/* 5. Hiệu ứng khi rê chuột qua mục chọn (Hover) */
+#menu li:hover {
+    background-color: red;        /* Đổi màu nền sang đỏ */
+}
+
+/* 6. Định vị và ẩn danh sách con cấp 2 */
+#menu ul ul {
+    position: absolute;           /* Vị trí tuyệt đối neo theo li cha */
+    top: 0;                       /* Nằm ngang hàng với đỉnh của li cha */
+    left: 140px;                  /* Bắt đầu ngay sát mép phải (100px width + 20px pad-left + 20px pad-right) */
+    visibility: hidden;           /* Ẩn danh sách con khi chưa hover */
+}
+
+/* 7. Hiển thị danh sách con khi rê chuột vào mục cha */
+#menu ul li:hover ul {
+    visibility: visible;          /* Hiển thị danh sách con tương ứng */
+}
+
+/* 8. Tinh chỉnh bề rộng cho các mục menu con để chứa trọn vẹn tên môn học dài */
+#menu ul ul li {
+    width: 180px;                 /* Mở rộng bề rộng menu con để không bị gãy dòng */
+    white-space: nowrap;          /* Giữ chữ trên một dòng gọn gàng */
+}
