@@ -1,0 +1,59 @@
+/* Đặt cố định font chữ và reset lề cho ul, li */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 30px;
+    background-color: #f4f6f9;
+}
+
+#menu {
+    width: 200px;
+}
+
+#menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#menu li {
+    list-style: none;
+    position: relative;
+    width: 120px;
+    height: 30px;
+    padding: 0 20px;
+    background-color: black;
+    line-height: 30px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+}
+
+#menu a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* Đổi màu nền khi rê chuột vào */
+#menu li:hover {
+    background-color: #e74c3c;
+}
+
+/* Định dạng danh sách con cấp 2 */
+#menu li ul {
+    position: absolute;
+    top: 0;
+    left: 160px; /* 120px width + 20px padding trái + 20px padding phải = 160px */
+    visibility: hidden;
+}
+
+/* Hiển thị danh sách con khi hover vào phần tử cha */
+#menu li:hover > ul {
+    visibility: visible;
+}
